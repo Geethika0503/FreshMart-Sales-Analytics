@@ -98,46 +98,6 @@ Look for useful patterns in sales across products, stores, and time periods.
 
 Identify products and stores where stock availability may be affecting sales.
 
-## How to Run the Project
-
-### 1. Clone the repository
-
-```bash
-git clone <your-repository-url>
-```
-
-### 2. Open the project folder
-
-```bash
-cd freshmart-capstone-starter
-```
-
-### 3. Create and activate a virtual environment
-
-```bash
-python -m venv .venv
-```
-
-On Windows:
-
-```bash
-.venv\Scripts\activate
-```
-
-### 4. Install the required packages
-
-```bash
-pip install pandas numpy jupyter
-```
-
-### 5. Run the notebook
-
-```bash
-jupyter notebook
-```
-
-Open the FreshMart analysis notebook and run the cells from top to bottom.
-
 ## Business Insights
 
 The analysis helps the supermarket owner understand:
