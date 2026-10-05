@@ -1,86 +1,176 @@
 # FreshMart-Sales-AnalyticsFreshMart Sales Analytics
 
-A simple Python project that looks at FreshMart’s sales data and finds useful insights about products, promotions, stores, and stock-outs.
+FreshMart Sales Analysis is a Python-based data analysis project created to help a supermarket owner understand sales performance across different stores and products.
 
-📌 About the Project
+The project cleans the sales data, checks data quality, analyzes store and product performance, and generates useful business insights.
 
-This project helps understand:
+## Features
 
-Which products make more profit
-Which promotions work well
-Which stores use their space effectively
-Where stock-outs may be causing lost sales
-How sales change across days and months
-🛠️ Tools Used
-Python
-Pandas
-NumPy
-Matplotlib
-Seaborn
-Jupyter Notebook
-VS Code
-📊 What I Did
-Product Profit
+* Load sales, product, store, and promotion data
+* Clean and validate sales data
+* Handle duplicate and missing values
+* Convert incorrect data formats
+* Calculate revenue and net price
+* Analyze product profit margins
+* Compare store performance
+* Measure promotion impact
+* Identify sales patterns
+* Check stockout situations
+* Generate business recommendations
 
-I compared products based on profit margin, not just sales.
+## Technologies Used
 
-Promotions
+* Python
+* Pandas
+* NumPy
+* Jupyter Notebook
+* Git & GitHub
 
-I checked whether promotions actually increased sales using sales lift and p-values.
+## Project Structure
 
-Stock-outs
-
-I found products that had 6 or more days with no sales and estimated the possible revenue lost.
-
-Store Performance
-
-I compared stores based on profit per square foot.
-
-Sales Patterns
-
-I looked at sales by category, weekday, and month to find useful patterns.
-
-💡 Main Findings
-Some products bring much more profit than others.
-Some promotions clearly improve sales.
-Some products are out of stock for several days.
-Store performance changes when we consider the size of the store.
-Keeping profitable products in stock can help reduce lost sales.
-▶️ How to Run
-
-Create a virtual environment:
-
-python -m venv .venv
-
-Activate it on Windows:
-
-.venv\Scripts\activate
-
-Install the required libraries:
-
-pip install pandas numpy matplotlib seaborn
-
-Run a report:
-
-python -m freshmart report --store 4
-
-To check a particular month:
-
-python -m freshmart report --store 2 --month 6
-📁 Project Structure
-FreshMart-Sales-Analytics/
+```text
+freshmart-capstone-starter/
 │
 ├── data/
+│   ├── sales.csv
+│   ├── products.csv
+│   ├── stores.csv
+│   ├── promotions.csv
+│   └── sales_clean.csv
+│
 ├── freshmart/
 │   ├── __init__.py
-│   ├── __main__.py
 │   ├── loader.py
-│   ├── cleaner.py
-│   └── report.py
+│   ├── cleaning.py
+│   └── reports.py
 │
-├── notebooks/
+├── freshmart_analysis.ipynb
 ├── README.md
 └── .gitignore
-🔮 Recommendation
+```
 
-FreshMart should keep high-profit products in stock, focus on promotions that increase sales, and use store space wisely. More customer data could help understand which products customers usually buy together.
+## Dataset
+
+The project uses four main datasets:
+
+* **Sales** – contains daily sales transactions
+* **Products** – contains product and pricing information
+* **Stores** – contains store details
+* **Promotions** – contains promotion information
+
+The dataset contains sales information from **5 supermarkets** and includes product, store, pricing, quantity, discount, and promotion details.
+
+## Data Cleaning
+
+Before performing the analysis, the sales data is cleaned by handling:
+
+* Duplicate records
+* Incorrect price formats
+* Different date formats
+* Negative quantities
+* Unknown product IDs
+* Unknown store IDs
+* Missing discount values
+
+A `QualityLog` is also used to record the data-quality issues found and the actions taken to fix them.
+
+## Analysis
+
+The project focuses on several important business questions:
+
+### Store Performance
+
+Compare stores based on their sales and profit performance.
+
+### Product Margins
+
+Identify products with better profit margins and understand which products contribute more to the business.
+
+### Promotion Impact
+
+Compare sales during promotions with previous sales periods to understand whether promotions are actually helping.
+
+### Sales Patterns
+
+Look for useful patterns in sales across products, stores, and time periods.
+
+### Stockouts
+
+Identify products and stores where stock availability may be affecting sales.
+
+## How to Run the Project
+
+### 1. Clone the repository
+
+```bash
+git clone <your-repository-url>
+```
+
+### 2. Open the project folder
+
+```bash
+cd freshmart-capstone-starter
+```
+
+### 3. Create and activate a virtual environment
+
+```bash
+python -m venv .venv
+```
+
+On Windows:
+
+```bash
+.venv\Scripts\activate
+```
+
+### 4. Install the required packages
+
+```bash
+pip install pandas numpy jupyter
+```
+
+### 5. Run the notebook
+
+```bash
+jupyter notebook
+```
+
+Open the FreshMart analysis notebook and run the cells from top to bottom.
+
+## Business Insights
+
+The analysis helps the supermarket owner understand:
+
+* Which stores are performing better
+* Which products have higher margins
+* Whether promotions are effective
+* Where sales patterns are changing
+* Where stockouts may be affecting revenue
+
+These insights can be used to make better decisions about pricing, promotions, inventory, and store performance.
+
+## Learning Outcomes
+
+Through this project, I learned:
+
+* Data cleaning using Python
+* Working with CSV files
+* Handling missing and duplicate data
+* Data validation
+* Business-oriented data analysis
+* Calculating revenue and profit-related metrics
+* Working with Python packages
+* Creating reports from data
+* Using Git and GitHub for project management
+
+## Future Improvements
+
+Some possible improvements are:
+
+* Add an interactive dashboard using Power BI or Streamlit
+* Add sales forecasting
+* Add more detailed inventory analysis
+* Use larger and more recent datasets
+* Add automated business reports
+* Improve promotion and customer-level analysis
